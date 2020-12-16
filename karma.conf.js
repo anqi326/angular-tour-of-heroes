@@ -19,13 +19,29 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, './coverage/angular-tour-of-heroes'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
+      // reports: [ 'html', 'lcovonly' ],
+      // fixWebpackSourcePaths: true,
+      // thresholds: {
+      //   statements: 80,
+      //   lines: 80,
+      //   branches: 80,
+      //   functions: 80
+      // }
     },
     reporters: ['progress', 'kjhtml'],
+    // reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    // browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessCI'],
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox']
+      }
+    },
     singleRun: false,
     restartOnFileChange: true
   });
