@@ -48,18 +48,6 @@ describe('BannerComponent', () => {
 
 
 
-
-// describe('BannerComponent', () => {
-//   let component: BannerComponent;
-//   let fixture: ComponentFixture<BannerComponent>;
-
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [BannerComponent]
-//     })
-//       .compileComponents();
-//   }));
-
 //   beforeEach(() => {
 //     fixture = TestBed.createComponent(BannerComponent);
 //     component = fixture.componentInstance;
