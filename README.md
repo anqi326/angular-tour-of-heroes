@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/anqi326/angular-tour-of-heroes.svg?branch=master)](https://travis-ci.com/anqi326/angular-tour-of-heroes)
+
 # AngularTourOfHeroes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
