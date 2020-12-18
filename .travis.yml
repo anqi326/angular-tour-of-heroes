@@ -4,14 +4,15 @@ sudo: false
 language: node_js
 node_js:
   - "10"
+# addons:
+#   apt:
+#     sources:
+#       - google-chrome
+#     packages:
+#       - dpkg
+#       - google-chrome-stable
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - dpkg
-      - google-chrome-stable
-
+  chrome: stable
 cache:
   directories:
      - ./node_modules
