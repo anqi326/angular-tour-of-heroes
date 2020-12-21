@@ -1,6 +1,5 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
 
 import { HeroesComponent } from './heroes.component';
 
@@ -38,14 +37,15 @@ describe('HeroesComponent', () => {
     const domElem = compiled.querySelector('.content label input');
     console.log('domElem: ' + domElem);
     fixture.detectChanges();
-    domElem.value = "Windstorm";
-    var event = new Event('input', {
-      'bubbles': true,
-      'cancelable': true
-    });
-    domElem.dispatchEvent(event);
-    tick();
+    domElem.value = "Windstorm1";
+    // var event = new Event('input', {
+    //   'bubbles': true,
+    //   'cancelable': true
+    // });
+    domElem.dispatchEvent(new Event('input'));
+    // tick();
     fixture.detectChanges();
-    expect(component.hero.name).toEqual("Windstorm");
+    expect(component.hero.name).toEqual(domElem.value);
+    console.log('domElem: ' + domElem.value);
   }));
 });
