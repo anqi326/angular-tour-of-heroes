@@ -1,5 +1,5 @@
 import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, ComponentFixtureAutoDetect, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { BannerComponent } from './banner.component';
@@ -10,7 +10,10 @@ describe('BannerComponent', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: [BannerComponent]
+      declarations: [BannerComponent],
+      // providers: [{
+      //   provide: ComponentFixtureAutoDetect, useValue: true
+      // }]
     }).compileComponents();
   });
 
@@ -43,6 +46,15 @@ describe('BannerComponent', () => {
     const p = pDeElem.nativeElement;
     expect(p.textContent).toContain('banner works!');
   });
+  it('h1 element should contain "Test Tour of Heroes"', () => {
+    let h1: HTMLElement;
+    h1 = fixture.nativeElement.querySelector('h1');
+    let oldTitle = component.title;
+    component.title = "new title";
+    fixture.detectChanges();
+    expect(h1.textContent).toContain(component.title);
+    console.log('h1.textContent: ' + h1.textContent);
+  })
 
 })
 
